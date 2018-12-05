@@ -2487,6 +2487,7 @@ string FunctionType::richIdentifier() const
 	case Kind::Log2: id += "log2"; break;
 	case Kind::Log3: id += "log3"; break;
 	case Kind::Log4: id += "log4"; break;
+	case Kind::VMLog: id += "vmlog"; break;
 	case Kind::GasLeft: id += "gasleft"; break;
 	case Kind::Event: id += "event"; break;
 	case Kind::SetGas: id += "setgas"; break;
@@ -2823,6 +2824,7 @@ bool FunctionType::isBareCall() const
 	case Kind::ECRecover:
 	case Kind::SHA256:
 	case Kind::RIPEMD160:
+	case Kind::VMLog:
 		return true;
 	default:
 		return false;
@@ -2863,6 +2865,7 @@ bool FunctionType::isPure() const
 		m_kind == Kind::ECRecover ||
 		m_kind == Kind::SHA256 ||
 		m_kind == Kind::RIPEMD160 ||
+		//m_kind == Kind::VMLog || // VMLog is not treated as a pure function to suppress warning
 		m_kind == Kind::AddMod ||
 		m_kind == Kind::MulMod ||
 		m_kind == Kind::ObjectCreation ||

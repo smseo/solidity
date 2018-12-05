@@ -906,6 +906,7 @@ public:
 		Log2,
 		Log3,
 		Log4,
+		VMLog, ///< VMLOG
 		Event, ///< syntactic sugar for LOG*
 		SetGas, ///< modify the default gas value for the function call
 		SetValue, ///< modify the default value transfer for the function call
