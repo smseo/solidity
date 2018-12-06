@@ -61,7 +61,7 @@ m_magicVariables(vector<shared_ptr<MagicVariableDeclaration const>>{
 	make_shared<MagicVariableDeclaration>("sha3", make_shared<FunctionType>(strings(), strings{"bytes32"}, FunctionType::Kind::SHA3, true, StateMutability::Pure)),
 	make_shared<MagicVariableDeclaration>("suicide", make_shared<FunctionType>(strings{"address"}, strings{}, FunctionType::Kind::Selfdestruct)),
 	make_shared<MagicVariableDeclaration>("tx", make_shared<MagicType>(MagicType::Kind::Transaction)),
-	make_shared<MagicVariableDeclaration>("vmlog", make_shared<FunctionType>(strings{"string memory"}, strings(), FunctionType::Kind::VMLog, false, StateMutability::Pure)),
+	make_shared<MagicVariableDeclaration>("vmlog", make_shared<FunctionType>(strings(), strings(), FunctionType::Kind::VMLog, true, StateMutability::Pure)),
 })
 {
 }
